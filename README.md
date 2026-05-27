@@ -89,7 +89,7 @@ Noise-based processing, filtering, and rhythmic textures. Slot 9 uses a PROGMEM 
 | 9 | Crackles | PROGMEM sample, random window jumps with chunked silence (57/113/331 samples). Speed 0.04–2× for pitch/texture | speed/pitch | window size (200–4000 samples) |
 
 ### Bank 3: BitBend Wavetables (9 algorithms)
-The BitBend technique: **manipulate the read address before accessing the buffer** is inspired by SoundScaper's "Clock Address Lines (SoundScaper is a great software for ios by Igor Vasiliev). Instead of changing *what* is in the buffer, you change *where* you read from on each sample.
+The BitBend technique: **manipulate the read address before accessing the buffer** is inspired by SoundScaper's "Clock Address Lines (SoundScaper is a great software for iOS by Igor Vasiliev). Instead of changing *what* is in the buffer, you change *where* you read from on each sample.
 Four modes: SET_0 (force bits to 0 → loops in lower addresses), SET_1 (force bits to 1 → jumps forward), XOR (flip bits → chaos), HOLD (freeze captured bits → locked loops). 
 Algorithms combine 1–4 modes on different bit ranges simultaneously, with a clocked Bernoulli gate randomly evolving the bit positions. This means you can pretty much listen to a sound and it will keep evolving and changing, since the clocked Bernoulli gate probabilistically reassigns which bit positions are affected over time.
 
@@ -171,7 +171,7 @@ A5  (VOLUME_PIN)      → Master volume (logarithmic curve)
 BUTTON CONTROLS:
 D9  (BUTTON_PREV)     → Previous algorithm - Btn3 AlgoPrev
 D6  (BUTTON_ALGO)     → Next algorithm (within current bank) - Btn2 AlgoNext
-D7 (BUTTON_BANK)      → Next bank (4 banks: Wavetables, Noisy Textures, Blips & Tones, Logic)  - cycles through banks// Btn1 BankUp 
+D7  (BUTTON_BANK)     → Next bank (cycles through banks) Btn1 BankUp 
 
 4 Digit DISPLAY:
 D10  (TX)             → TM1637 DIO (7-segment display) DIO
@@ -202,7 +202,7 @@ All algorithms pass through global effects before output:
 
 ## File Structure
 
-### noiseferatu.ino
+### noisferatu.ino
 **Purpose:** Main orchestrator - setup, loop, ISR, bank/algorithm routing
 
 **Key Components:**
@@ -369,7 +369,7 @@ void updateAllParams()
 }
 ```
 
-3. **In noiseferatu.ino:**
+3. **In noisferatu.ino:**
 ```cpp
 // Add to appropriate bank enum
 enum BlipAndTonesAlgos {
