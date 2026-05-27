@@ -129,17 +129,6 @@ Pure bitwise operations on live oscillator values. It's doing what a CMOS logic 
 In this bank, pot1 and pot2 each control an oscillator frequency (freq os1, freq os2).
 Exception: algo 1 has osc1 fixed, pot1 = osc2 freq, pot2 = osc3 freq.
 
-| # | Name | Waveforms | Operation |
-|---|------|-----------|-----------|
-| 1 | Three Cascaded Squares | 3 squares | AM chain: sq1 modulates sq2, sq2 modulates sq3 |
-| 2 | NOR Square | 2 squares | `~(sq1 \| sq2) & 0x3FF` |
-| 3 | Tri OR Saw | Triangle + Saw | `tri \| saw` |
-| 4 | Tri NOR Tri | 2 triangles | `~(tri1 \| tri2) & 0x3FF` |
-| 5 | Tri XOR Tri | 2 triangles | `tri1 ^ tri2` — complex crackles |
-| 6 | Square XNOR | 2 squares | `~(sq1 ^ sq2) & 0x3FF` |
-| 7 | Square NAND | 2 squares | `~(sq1 & sq2) & 0x3FF` — extremely low freq drones |
-| 8 | Two Saws | Dual saws (moved from Bank 2), averaged | `(saw1 + saw2) >> 1` average two saws |
-| 9 | Square OR Square | 2 squares | `sq1 \| sq2` |
 
 | # | Name | Waveforms | Operation | Sound character |
 |---|------|-----------|-----------|----------------|
