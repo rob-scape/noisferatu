@@ -751,10 +751,10 @@ void TC5_Handler()
     //int16_t dithered = crushed + (rand12() & 1);  // +0 or +1 dither
     
     // Option 2: Symmetric ±1 dither (current favorite - good balance)
-    int16_t dithered = crushed + ((rand12() & 1) - (rand12() & 1));
+    //int16_t dithered = crushed + ((rand12() & 1) - (rand12() & 1));
     
     // Option 3: No dithering (original, more whine)
-    //int16_t dithered = crushed;  // No dithering
+    int16_t dithered = crushed;  // No dithering
     
     // MASTER VOLUME (super efficient: one multiply + one shift)
     // Multiply signed sample by unsigned volume (0-255), then divide by 256
