@@ -267,9 +267,9 @@ volatile uint16_t gw1SilenceChunkRemaining = 0;
 #define GW1_CHUNK_SIZE_2 8
 #define GW1_CHUNK_SIZE_3 64
 #define GW1_NOISE_PROB 1
-#define GW1_BLIP_SIZE 50
-#define GW1_BLIP_FREQ_MIN 220.0f
-#define GW1_BLIP_FREQ_MAX 7000.0f
+#define GW1_BLIP_SIZE 250
+#define GW1_BLIP_FREQ_MIN 1000.0f
+#define GW1_BLIP_FREQ_MAX 1200.0f
 
 void generateWaveform1()
 {
